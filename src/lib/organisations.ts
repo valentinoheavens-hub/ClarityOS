@@ -54,9 +54,16 @@ export async function redeemInviteCode(userId: string, code: string): Promise<Re
   // Already a member — idempotent success
   if (learner.organisation_id === org.id) return { ok: true, orgName: org.name };
 
+  // The organisation's licence covers the member: activate them on the
+  // Enterprise tier, no individual accreditation required.
   const { error } = await admin
     .from("learners")
-    .update({ organisation_id: org.id, status: "active" })
+    .update({
+      organisation_id: org.id,
+      status: "active",
+      subscription_tier: "enterprise",
+      subscription_status: "active",
+    })
     .eq("id", learner.id);
 
   if (error) {

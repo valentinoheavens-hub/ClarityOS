@@ -22,6 +22,8 @@ export interface SubscriptionPlan {
   display_annual_kes: string;
   currency: string;
   highlighted: boolean;
+  /** Contact-sales tier — no self-serve checkout; pricing is custom. */
+  contact_only?: boolean;
   cta: string;
   features: string[];
   limits: {
@@ -119,6 +121,39 @@ export const SUBSCRIPTION_PLANS: SubscriptionPlan[] = [
       "Up to 5 peer validators",
       "Team dashboard (up to 5 seats)",
       "Priority onboarding by Dr. Heavens",
+    ],
+    limits: {
+      coach_messages_per_month: null,
+      assessments_per_year: null,
+      peer_validators: 5,
+      whatsapp_access: true,
+      learning_paths: true,
+      export_reports: true,
+    },
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    subtitle: "For institutions & teams at scale",
+    display_monthly: "Custom",
+    display_annual: "Custom",
+    amount_monthly: 0,
+    amount_annual: 0,
+    amount_monthly_kes: 0,
+    amount_annual_kes: 0,
+    display_monthly_kes: "Custom",
+    display_annual_kes: "Custom",
+    currency: "USD",
+    highlighted: false,
+    contact_only: true,
+    cta: "Contact sales",
+    features: [
+      "Everything in Black Belt Pro",
+      "Bulk seats for your whole leadership team",
+      "One invite link — members join instantly, no application",
+      "Organisation clarity dashboard & team analytics",
+      "Centralised invoice / bank-transfer billing",
+      "Dedicated onboarding & priority support",
     ],
     limits: {
       coach_messages_per_month: null,

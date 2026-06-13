@@ -657,20 +657,23 @@ export function LandingPage({ isAuthenticated }: LandingPageProps) {
           🛡️ 30-day money-back guarantee · ✋ Cancel any time · 🌍 Paystack · Flutterwave · M-Pesa
         </p>
 
-        {/* Enterprise strip */}
-        <div className="mt-10 bg-gradient-to-r from-primary/15 via-primary/5 to-transparent border border-primary/30 rounded-2xl px-7 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <p className="font-display font-semibold text-lg">Leading an institution?</p>
+        {/* Enterprise — contact-only package */}
+        <div className="mt-6 bg-gradient-to-r from-primary/15 via-primary/5 to-transparent border border-primary/30 rounded-2xl px-7 py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+          <div className="lg:max-w-md">
+            <p className="text-xs font-semibold text-primary tracking-[0.2em] uppercase mb-1">Enterprise</p>
+            <p className="font-display font-semibold text-lg">Register your whole organisation</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Seat-based licences for banks, agencies, universities and corporates — with
-              team clarity analytics and invoice billing.
+              Bulk seats for banks, agencies, universities and corporates. Your team joins
+              through one invite link — no individual applications — and you get an
+              organisation clarity dashboard.{" "}
+              <span className="text-foreground font-medium">Custom pricing — let&apos;s talk.</span>
             </p>
           </div>
           <Link
             href="/institutions"
-            className="btn-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm whitespace-nowrap transition-colors"
+            className="btn-gold inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm whitespace-nowrap transition-colors"
           >
-            For institutions
+            Contact sales
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

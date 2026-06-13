@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import {
   CheckCircle2, Loader2, Zap, Crown, Shield,
-  Smartphone, CreditCard, Banknote,
+  Smartphone, CreditCard, Banknote, Building2,
 } from "lucide-react";
 import { SUBSCRIPTION_PLANS } from "@/constants/subscription-plans";
 import type { PaymentProvider } from "@/constants/subscription-plans";
@@ -461,6 +461,45 @@ export function UpgradePlans({
             </div>
           );
         })}
+      </div>
+
+      {/* ── Enterprise — contact-only ── */}
+      <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6 md:p-7">
+        <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+          <div className="flex items-start gap-3 md:w-1/3">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <Building2 className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="font-display font-bold text-foreground text-base">Enterprise</h3>
+              <p className="text-xs text-muted-foreground">For institutions & teams at scale</p>
+              <p className="font-display font-black text-2xl text-foreground mt-2">
+                Custom<span className="text-sm font-normal text-muted-foreground"> pricing</span>
+              </p>
+            </div>
+          </div>
+
+          <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2 flex-1">
+            {[
+              "Bulk seats for your whole team",
+              "One invite link — no individual applications",
+              "Organisation clarity dashboard",
+              "Centralised invoice billing",
+            ].map((f) => (
+              <li key={f} className="flex items-start gap-2 text-sm">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                <span className="text-muted-foreground">{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="/institutions"
+            className="md:w-auto w-full text-center py-2.5 px-6 rounded-xl text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors whitespace-nowrap"
+          >
+            Contact sales
+          </a>
+        </div>
       </div>
 
       <p className="text-center text-xs text-muted-foreground">
