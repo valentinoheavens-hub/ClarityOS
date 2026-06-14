@@ -53,9 +53,11 @@ and [`src/constants/bgc-frameworks.ts`](src/constants/bgc-frameworks.ts):
 
 - **Next.js 16 (App Router)** + React, TypeScript, Tailwind
 - **Supabase** — Postgres, Auth (SSR cookies), RLS. Types in [`src/types/supabase.ts`](src/types/supabase.ts)
-- **Coach inference** — Groq powers every channel (web, WhatsApp, evidence
-  scoring) via one module [`src/lib/bgc-coach/provider.ts`](src/lib/bgc-coach/provider.ts) (model set by `BGC_COACH_MODEL`)
-- **Payments** — Paystack, Flutterwave, M-Pesa (USD + KES)
+- **Coach inference** — one module [`src/lib/bgc-coach/provider.ts`](src/lib/bgc-coach/provider.ts)
+  powers every channel (web, WhatsApp, evidence scoring). **Anthropic Claude is
+  primary** (`CLAUDE_COACH_MODEL`, default `claude-opus-4-8`) with **Groq/Llama as
+  a fast fallback** (`GROQ_COACH_MODEL`) so coaching never goes dark
+- **Payments** — Paystack (NGN, primary), Flutterwave (USD, diaspora), M-Pesa (KES)
 - **WhatsApp** — coaching over the WhatsApp Business API
 
 ### Route groups
@@ -84,15 +86,16 @@ npx tsc --noEmit     # type check
 ### Environment (`.env.local` — never commit)
 
 Server-side only (no `NEXT_PUBLIC_` prefix): `SUPABASE_SERVICE_ROLE_KEY`,
-`GROQ_API_KEY`, `RESEND_API_KEY`, `PAYSTACK_SECRET_KEY`,
-`FLUTTERWAVE_SECRET_KEY`, `MPESA_*`, `WHATSAPP_TOKEN`, `CRON_SECRET`.
+`ANTHROPIC_API_KEY` (primary coach), `GROQ_API_KEY` (fallback coach),
+`RESEND_API_KEY`, `PAYSTACK_SECRET_KEY`, `FLUTTERWAVE_SECRET_KEY`, `MPESA_*`,
+`WHATSAPP_TOKEN`, `CRON_SECRET`.
 Public: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
 `NEXT_PUBLIC_APP_URL`, payment public keys.
 
-Optional: `BGC_COACH_MODEL` (default `llama-3.3-70b-versatile`), `EMAIL_FROM`,
-`ADMIN_NOTIFY_EMAIL`.
+Optional: `CLAUDE_COACH_MODEL` (default `claude-opus-4-8`), `GROQ_COACH_MODEL`
+(default `llama-3.3-70b-versatile`), `EMAIL_FROM`, `ADMIN_NOTIFY_EMAIL`.
 
-All AI inference on this project runs on **Groq**.
+Coaching runs on **Anthropic Claude** (primary) with **Groq** as a fast fallback.
 
 ### Database migrations
 
