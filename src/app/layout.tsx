@@ -40,13 +40,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dr. Valentino Heavens", url: "https://blackbeltglobal.co" }],
   creator: "Blackbelt Global Consulting Limited",
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: "/clarityos-mark.svg",
-  },
+  // Favicons are generated from the ClarityOS mark via the App Router file
+  // conventions: src/app/{favicon.ico, icon.png, apple-icon.png}.
   openGraph: {
     type: "website",
     locale: "en_NG",
@@ -54,13 +49,13 @@ export const metadata: Metadata = {
     title: "ClarityOS — Clarity. Mastery. Scale.",
     description:
       "Smart SaaS. Clear impact. AI-powered leadership mastery for African founders and executives, built on BGC's proprietary frameworks.",
-    images: [{ url: "/clarityos-logo.svg", width: 460, height: 120, alt: "ClarityOS" }],
+    images: [{ url: "/clarityos-logo.jpg", width: 1024, height: 379, alt: "ClarityOS" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ClarityOS — Clarity. Mastery. Scale.",
     description: "Smart SaaS. Clear impact. AI-powered leadership mastery for African leaders.",
-    images: ["/clarityos-logo.svg"],
+    images: ["/clarityos-logo.jpg"],
   },
   robots: {
     index: true,
@@ -86,7 +81,7 @@ export default function RootLayout({
         {/* Set the theme before paint to avoid a flash. Stored choice wins;
             otherwise default to the brand's dark theme. */}
         <Script id="theme-init" strategy="beforeInteractive">
-          {`(function(){try{var t=localStorage.getItem('theme');var dark=t?t==='dark':true;var e=document.documentElement;e.classList.toggle('dark',dark);e.style.colorScheme=dark?'dark':'light';}catch(e){}})();`}
+          {`(function(){try{var t=localStorage.getItem('theme');var dark=t?t==='dark':false;var e=document.documentElement;e.classList.toggle('dark',dark);e.style.colorScheme=dark?'dark':'light';}catch(e){}})();`}
         </Script>
       </head>
       <body

@@ -4,7 +4,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import Link from "next/link";
-import { Logo, LogoMark } from "@/components/brand/logo";
+import { Logo } from "@/components/brand/logo";
 import {
   ArrowRight,
   BarChart3,
@@ -155,7 +155,7 @@ export function LandingPage({ isAuthenticated }: LandingPageProps) {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
         <nav className="max-w-6xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Logo markClassName="h-8 w-8" wordmarkClassName="text-base" />
+            <Logo className="h-9 w-auto" priority />
           </Link>
 
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
@@ -700,17 +700,11 @@ export function LandingPage({ isAuthenticated }: LandingPageProps) {
       <footer className="border-t border-border/40">
         <div className="max-w-6xl mx-auto px-5 lg:px-8 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <LogoMark className="h-8 w-8" />
-              <div>
-                <p className="font-display font-bold text-sm leading-none">
-                  <span className="text-foreground">Clarity</span>
-                  <span className="text-brand-gradient">OS</span>
-                </p>
-                <p className="text-[9px] text-muted-foreground tracking-[0.2em] uppercase mt-0.5">
-                  Blackbelt Global Consulting
-                </p>
-              </div>
+            <div className="flex flex-col gap-2">
+              <Logo className="h-9 w-auto" />
+              <p className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">
+                Blackbelt Global Consulting
+              </p>
             </div>
 
             <div className="flex items-center gap-6 text-xs text-muted-foreground">

@@ -60,7 +60,7 @@ export default function InstitutionsPage() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
         <nav className="max-w-6xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Logo markClassName="h-8 w-8" wordmarkClassName="text-base" />
+            <Logo className="h-9 w-auto" priority />
           </Link>
           <Link
             href="/"

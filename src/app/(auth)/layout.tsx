@@ -37,7 +37,7 @@ export default function AuthLayout({
 
       {/* Logo mark */}
       <div className="mb-8 flex justify-center">
-        <Logo markClassName="h-10 w-10" wordmarkClassName="text-xl" showTagline />
+        <Logo className="h-16 w-auto" priority />
       </div>
 
       {/* Auth card */}

@@ -54,7 +54,9 @@ function shell(title: string, bodyHtml: string): string {
       <tr><td align="center">
         <table role="presentation" width="520" cellpadding="0" cellspacing="0" style="background:#0D2440;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:36px;">
           <tr><td align="center" style="padding-bottom:24px;">
-            <span style="display:inline-block;background:#1B6FF3;color:#FFFFFF;font-weight:bold;font-size:14px;border-radius:8px;padding:8px 12px;">Clarity<span style="color:#7FD7F5;">OS</span></span>
+            <span style="display:inline-block;background:#FFFFFF;border-radius:12px;padding:12px 18px;">
+              <img src="${APP_URL}/clarityos-logo.png" alt="ClarityOS" height="36" style="height:36px;width:auto;display:block;" />
+            </span>
           </td></tr>
           <tr><td style="color:#EAF2FB;font-size:20px;font-weight:bold;padding-bottom:16px;" align="center">${title}</td></tr>
           <tr><td style="color:#A9C2DC;font-size:14px;line-height:1.7;">${bodyHtml}</td></tr>

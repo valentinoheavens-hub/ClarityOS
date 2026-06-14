@@ -131,7 +131,7 @@ function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-5">
       <div className="mb-10">
-        <Logo markClassName="h-9 w-9" wordmarkClassName="text-base" />
+        <Logo className="h-10 w-auto" priority />
       </div>
       {children}
     </div>

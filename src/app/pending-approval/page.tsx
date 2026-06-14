@@ -68,7 +68,7 @@ export default async function PendingApprovalPage() {
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-5">
       {/* Brand */}
       <div className="mb-10">
-        <Logo markClassName="h-9 w-9" wordmarkClassName="text-base" />
+        <Logo className="h-10 w-auto" />
       </div>
 
       <div className="w-full max-w-md bg-card border border-border/50 rounded-3xl p-8 text-center">

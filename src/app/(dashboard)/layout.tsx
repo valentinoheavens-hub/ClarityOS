@@ -86,7 +86,7 @@ export default async function DashboardLayout({
       <aside className="hidden lg:flex flex-col w-60 bg-card border-r border-border/50 fixed inset-y-0 left-0 z-30">
         {/* Brand */}
         <div className="flex items-center px-5 py-5 border-b border-border/40">
-          <Logo markClassName="h-8 w-8" wordmarkClassName="text-sm" />
+          <Logo className="h-9 w-auto" priority />
         </div>
 
         {/* Learner belt badge */}
@@ -135,7 +135,7 @@ export default async function DashboardLayout({
           {/* Mobile header: hamburger + logo */}
           <div className="flex items-center gap-3 lg:hidden">
             <MobileNav displayName={displayName} belt={belt} />
-            <Logo markClassName="h-7 w-7" wordmarkClassName="text-sm" />
+            <Logo className="h-8 w-auto" />
           </div>
 
           {/* BGC tagline — visible desktop */}

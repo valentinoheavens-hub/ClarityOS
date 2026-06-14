@@ -34,7 +34,7 @@ export function MobileNav({ displayName, belt }: MobileNavProps) {
       <SheetContent side="left" className="bg-card border-r border-border/50 p-0 w-64">
         {/* Brand */}
         <div className="flex items-center px-5 py-5 border-b border-border/40">
-          <Logo markClassName="h-8 w-8" wordmarkClassName="text-sm" />
+          <Logo className="h-8 w-auto" />
         </div>
 
         {/* User */}

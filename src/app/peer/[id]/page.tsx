@@ -41,7 +41,7 @@ export default async function PeerValidationPortal({
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-5 py-12">
       <div className="mb-8">
-        <Logo markClassName="h-9 w-9" wordmarkClassName="text-base" />
+        <Logo className="h-10 w-auto" priority />
       </div>
 
       <div className="w-full max-w-lg">

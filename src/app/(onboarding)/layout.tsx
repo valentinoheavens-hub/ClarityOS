@@ -25,7 +25,7 @@ export default async function OnboardingLayout({
     <div className="min-h-screen bg-background flex flex-col">
       {/* Minimal header */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-border/40">
-        <Logo markClassName="h-8 w-8" wordmarkClassName="text-sm" />
+        <Logo className="h-9 w-auto" priority />
         <span className="text-xs text-muted-foreground hidden sm:block">
           Powered by BGC Blackbelt OS™
         </span>
