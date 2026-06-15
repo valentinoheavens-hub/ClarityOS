@@ -84,18 +84,21 @@ const STEPS = [
     title: "Take the Clarity Assessment™",
     desc: "26 questions across 5 leadership dimensions. Ten minutes reveals exactly where your clarity gaps are — and where to attack first.",
     icon: BarChart3,
+    color: "#1B6FF3", // blue — assess
   },
   {
     n: "02",
     title: "Coach with BGC AI — 24/7",
     desc: "Your personalised coach is trained on BGC's five proprietary frameworks. It knows your scores, your context, and your next move.",
     icon: MessageSquare,
+    color: "#7C3AED", // violet — coach
   },
   {
     n: "03",
     title: "Log evidence, earn your belt",
     desc: "Weekly behavioural evidence + peer validation turn insight into proof. Your BGC Mastery Score™ climbs. Your belt follows.",
     icon: Trophy,
+    color: "#E0A82E", // gold — earn your belt
   },
 ];
 
@@ -376,8 +379,17 @@ export function LandingPage({ isAuthenticated }: LandingPageProps) {
       </section>
 
       {/* ── How it works ── */}
-      <section id="how-it-works" className="border-y border-border/40 bg-card/30">
-        <div className="max-w-6xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+      <section id="how-it-works" className="relative border-y border-border/40 bg-card/30 overflow-hidden">
+        {/* Soft tinted wash — blue → violet → gold across the section */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-60"
+          style={{
+            background:
+              "radial-gradient(40% 60% at 15% 30%, rgba(27,111,243,0.10), transparent 70%), radial-gradient(40% 60% at 50% 80%, rgba(124,58,237,0.10), transparent 70%), radial-gradient(40% 60% at 85% 30%, rgba(224,168,46,0.12), transparent 70%)",
+          }}
+        />
+        <div className="relative max-w-6xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-xs font-semibold text-primary tracking-[0.25em] uppercase mb-4">How it works</p>
             <h2 className="font-display text-3xl lg:text-4xl font-bold tracking-tight">
@@ -393,12 +405,28 @@ export function LandingPage({ isAuthenticated }: LandingPageProps) {
             {STEPS.map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.n} className="landing-card bg-card border border-border/40 rounded-2xl p-7 relative">
-                  <span className="absolute top-6 right-6 font-display text-4xl font-bold text-white/5 select-none">
+                <div
+                  key={s.n}
+                  className="landing-card bg-card border border-border/40 rounded-2xl p-7 relative overflow-hidden"
+                  style={{ ["--step" as string]: s.color }}
+                >
+                  {/* Colored top accent bar */}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 top-0 h-1"
+                    style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}55)` }}
+                  />
+                  <span
+                    className="absolute top-6 right-6 font-display text-4xl font-bold select-none"
+                    style={{ color: s.color, opacity: 0.16 }}
+                  >
                     {s.n}
                   </span>
-                  <div className="w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center mb-5">
-                    <Icon className="h-5 w-5 text-primary" />
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                    style={{ background: `${s.color}1f` }}
+                  >
+                    <Icon className="h-5 w-5" style={{ color: s.color }} />
                   </div>
                   <h3 className="font-display font-semibold text-lg pr-10">{s.title}</h3>
                   <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
