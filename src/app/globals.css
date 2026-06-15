@@ -181,7 +181,9 @@
 }
 
 /* Belt badge colours */
-.belt-black  { background: rgba(184,150,12,0.12); color: #F5C518; border-color: rgba(184,150,12,0.35); }
+/* Black Belt — black/grey in light mode (the gold washes out on white); gold on dark. */
+.belt-black  { background: rgba(17,24,39,0.06); color: #1A1A1A; border-color: rgba(17,24,39,0.20); }
+.dark .belt-black { background: rgba(184,150,12,0.14); color: #F5C518; border-color: rgba(184,150,12,0.35); }
 .belt-blue   { background: rgba(37,99,235,0.12);  color: #60A5FA; border-color: rgba(37,99,235,0.35); }
 .belt-green  { background: rgba(5,150,105,0.12);  color: #34D399; border-color: rgba(5,150,105,0.35); }
 .belt-yellow { background: rgba(217,119,6,0.12);  color: #FCD34D; border-color: rgba(217,119,6,0.35); }
