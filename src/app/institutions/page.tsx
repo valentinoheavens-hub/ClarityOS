@@ -58,13 +58,13 @@ export default function InstitutionsPage() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
-        <nav className="max-w-6xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+        <nav className="max-w-6xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Logo className="h-9 w-auto" priority />
+            <Logo className="h-12 w-auto" priority />
           </Link>
           <Link
             href="/"
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 text-base text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to home
