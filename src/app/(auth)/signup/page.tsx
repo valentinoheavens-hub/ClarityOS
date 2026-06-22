@@ -99,7 +99,7 @@ function SignupForm() {
           Join the BGC Beta
         </CardTitle>
         <CardDescription>
-          90-day leadership transformation for African founders &amp; executives
+          Leadership transformation for African founders &amp; executives
         </CardDescription>
       </CardHeader>
       <CardContent>
